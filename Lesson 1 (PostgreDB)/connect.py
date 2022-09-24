@@ -166,15 +166,18 @@ def check_requirements():
   except:
     exit(f"{cl.FAIL}pandas is not installed!{cl.ENDC}\n{cl.OKCYAN}Run {cl.BOLD}'pip3 install pandas'{cl.ENDC}{cl.OKCYAN} to install it.{cl.ENDC}")
 
-def main():
+def clear():
   print("\033c")
+
+def main():
   check_requirements()
+  clear()
 
   db = db_worker(credentials)
   try:
     callback_message = None
     while True:
-      print("\033c")
+      clear()
       db.show_entries()
 
       if callback_message:
@@ -182,7 +185,7 @@ def main():
         callback_message = None
       
       command = choose_command(['Create entry', 'Delete entry', 'Update entry', 'Exit'], "Supported operations:")
-      print("\033c")
+      clear()
       if command == '1':
         callback_message = db.create_entry()
       elif command == '2':
