@@ -1,6 +1,6 @@
 docker build -t python_server .
 docker images
-docker run python_server
 
-// to run in bg
-docker container ls
+docker run -p 8000:8000 --name cool-api python_server
+// in bg
+docker run -d -p 8000:8000 --name cool-api python_server

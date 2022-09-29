@@ -1,9 +1,12 @@
 FROM python:3.8
 
+COPY ./src /app/src
+COPY ./requirements.txt /app
+
 WORKDIR /app
 
-COPY . .
+RUN pip3 install -r requirements.txt
 
-RUN pip install -r requirements.txt
+EXPOSE 8000
 
-CMD ["uvicorn", "main:app", "--proxy-headers", "--host", "127.0.0.1", "--port", "8000"]
+CMD ["uvicorn", "src.main:app", "--host=0.0.0.0", "--reload"]
