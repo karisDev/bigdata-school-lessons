@@ -1,0 +1,6 @@
+docker build -t python_server .
+docker images
+docker run python_server
+
+// to run in bg
+docker container ls
