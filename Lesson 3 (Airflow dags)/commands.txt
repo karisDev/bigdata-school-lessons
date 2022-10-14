@@ -1,0 +1,6 @@
+cd airflow_example/bin/
+source activate
+airflow db init
+airflow webserver -p 8080
+
+airflow users create --username admin --firstname admin --lastname testing --role Admin --email admin@domain.com
