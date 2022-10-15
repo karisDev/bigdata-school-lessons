@@ -1,3 +1,4 @@
+from ctypes import create_string_buffer
 from datetime import datetime
 from airflow import DAG
 from airflow.operators.dummy_operator import DummyOperator
@@ -13,3 +14,14 @@ dag = DAG('hello_world',
 hello_operator = PythonOperator(task_id='hello_task', python_callable=print_hello, dag=dag)
 
 hello_operator
+"""
+dag create_string_buffer
+xcom dec task
+
+@task
+
+dag из гл переменной массив
+отсортировать
+
+передать в функцию и вывести
+"""
